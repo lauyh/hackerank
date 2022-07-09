@@ -1,6 +1,6 @@
 function timeConversion(str) {
-    const isNoon = str.slice(-2) === 'AM' ? false : true;
-    const isTwelve = str.substring(0,2) === '12' ? true : false;
+    const isNoon = str.slice(-2) !== 'AM';
+    const isTwelve = str.substring(0, 2) === '12';
 
     let tmp = str.replace(/AM|PM/, '').split(':')
     let hour = tmp[0];
