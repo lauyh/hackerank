@@ -1,10 +1,9 @@
-<project name="timeConversion" default="test" basedir=".">
+<project name="miniMax" default="test" basedir=".">
     <description>
         Minimax Function to Pass Hackerank Test
     </description>
     <!-- set global properties for this build -->
     <property name="testdir" location="test" />
-    <property name="distdir" location="dist" />
     <property name="srcdir" location="src" />
     <property name="full-compile" value="true" />
 
@@ -25,7 +24,7 @@
     </target>
 
     <target name="compile" depends="clean" description="compile source code">
-        <javac srcdir="${srcdir}" destdir="${testdir}" verbose="${full-compile}">
+        <javac includeantruntime="false" srcdir="${srcdir}" destdir="${testdir}" verbose="${full-compile}">
             <classpath refid="classpath.test" />
         </javac>
     </target>
@@ -34,7 +33,7 @@
         <junit>
             <classpath refid="classpath.test" />
             <formatter type="brief" usefile="false" />
-            <test name="MiniMaxTest" />
+            <test name="MinimaxTest" />
         </junit>
 
     </target>
